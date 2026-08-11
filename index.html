@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CP AI - Assistant</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  
+</head>
+<body>
+
+  <div class="chat-container">
+    <header class="chat-header">
+      <h2>CP AI</h2>
+      <span class="status">Online</span>
+    </header>
+
+    <div class="chat-box" id="chatBox">
+      <div class="message ai-message">
+        <div class="message-content">
+          Hello! I am <strong>CP AI</strong>. How can I help you today?
+        </div>
+      </div>
+    </div>
+
+    <input type="file" id="fileInput" accept="*/*" style="display: none;" />
+    <input type="file" id="imageInput" accept="image/*" style="display: none;" />
+    <input type="file" id="cameraInput" accept="image/*" capture="environment" style="display: none;" />
+
+    <form class="input-container" id="chatForm">
+      <div class="plus-wrapper">
+        <button type="button" id="plusBtn" class="plus-btn" title="Add attachments">+</button>
+        <div id="attachMenu" class="attach-menu hidden">
+          <button type="button" id="btnUploadFile" class="menu-item">📁 Document / File</button>
+          <button type="button" id="btnUploadImage" class="menu-item">🖼️ Photos & Gallery</button>
+          <button type="button" id="btnCamera" class="menu-item">📷 Take Photo</button>
+        </div>
+      </div>
+
+      <div id="attachmentPreview" class="attachment-preview hidden">
+        <span id="previewName"></span>
+        <button type="button" id="removeAttachBtn">×</button>
+      </div>
+
+      <input 
+        type="text" 
+        id="userInput" 
+        placeholder="Ask CP AI anything..." 
+        required 
+        autocomplete="off" 
+      />
+      <button type="submit" id="sendBtn">Send</button>
+    </form>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
